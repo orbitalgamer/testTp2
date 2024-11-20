@@ -76,68 +76,38 @@ public class Cours {
             System.out.println(ex);
         }
     }
-
-
-
-    /**
-     *
-     *
-     *
-     * Question 3
-     *
-     *
-     *
-     *  public void update(int id)
-     *
-     *
-     *
-     */
-    public void update(int id){
+    
+    public void update(int id) {
         Connection conn = DataAccess.connect();
+        PreparedStatement prstm;
         try {
-            PreparedStatement prstm =  conn.prepareStatement("UPDATE cours SET intitule=?, duree=?, idprof=? WHERE idcours = ?");
+            prstm = conn.prepareStatement("UPDATE cours SET intitule = ?, duree = ? WHERE idcours = ?;");
             prstm.setString(1, this.getIntitule());
             prstm.setString(2, this.getDuree());
-            prstm.setInt(3, this.getProf());
-            prstm.setInt(4, id); //mets id en +
-            if(prstm.execute()){
-                System.out.println("update DONE !!!");
-            }
+            prstm.setInt(3, id);
+            prstm.executeUpdate();
+            System.out.println("Updated DONE !!!");
+            conn.close();
         } catch (SQLException ex) {
             System.out.println(ex);
         }
     }
-
-
-
-    /**
-     *
-     *
-     *
-     * Question 3
-     *
-     *
-     *
-     *  public void delete(int id)
-     *
-     *
-     *
-     */
-    public static void delete(int id){
+    
+    public static void delete(int id) {
         Connection conn = DataAccess.connect();
+        PreparedStatement prstm;
         try {
-            PreparedStatement prstm =  conn.prepareStatement("DELETE from cours WHERE idcours = ?");
-            prstm.setInt(1, id); //mets id
+            prstm = conn.prepareStatement("DELETE FROM cours WHERE idcours = ?;");
+            prstm.setInt(1, id);
             if(prstm.execute()){
-                System.out.println("delete DONE !!!");
+                System.out.println("Deletion DONE !!!");
             }
+            conn.close();
         } catch (SQLException ex) {
             System.out.println(ex);
         }
     }
-
-
-
+    
     public static ArrayList<Cours> select() {
         Connection conn = DataAccess.connect();
         Statement prstm;

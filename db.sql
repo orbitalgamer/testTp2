@@ -5,13 +5,13 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema test_java
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `test_java` DEFAULT CHARACTER SET utf8 ;
-USE `test_java` ;
+CREATE SCHEMA IF NOT EXISTS `user01_test_java` DEFAULT CHARACTER SET utf8 ;
+USE `user01_test_java` ;
 
 -- -----------------------------------------------------
 -- Table `test_java`.`prof`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `test_java`.`prof` (
+CREATE TABLE IF NOT EXISTS `prof` (
   `idprof` INT NOT NULL AUTO_INCREMENT,
   `nomprof` VARCHAR(100) NOT NULL,
   `prenomprof` VARCHAR(100) NOT NULL,
@@ -24,7 +24,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `test_java`.`cours`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `test_java`.`cours` (
+CREATE TABLE IF NOT EXISTS `cours` (
   `idcours` INT NOT NULL AUTO_INCREMENT,
   `intitule` VARCHAR(200) NOT NULL,
   `duree` VARCHAR(10) NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `test_java`.`cours` (
   INDEX `fk_cours_prof_idx` (`idprof` ASC),
   CONSTRAINT `fk_cours_prof`
     FOREIGN KEY (`idprof`)
-    REFERENCES `test_java`.`prof` (`idprof`)
+    REFERENCES `prof` (`idprof`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

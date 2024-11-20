@@ -158,59 +158,34 @@ public class CoursTest {
         System.out.println(Cours.select().toString());
     }
 
-
-
     /**
-     *
-     *
-     * Question 8 : testUpdate()
-     *
-     *
      * Test of update method, of class Cours.
-     *
-     *
      */
     @Test
     @Order(8)
     public void testUpdate() {
         System.out.println("Cours.Test.update");
-        Cours instance = new Cours("Java", "42h", 2);
-
-        instance.update(2);
-
-        System.out.println(Cours.select().toString());
+        int id = 3;
+        System.out.println("Before Updated");
+        System.out.println(Cours.select(id).toString());
+        cours.update(id);
+        System.out.println("After Updated");
+        System.out.println(Cours.select(id).toString());
     }
-
 
     /**
-     *
-     *
-     * Question 8 : testDelete()
-     *
-     *
      * Test of delete method, of class Cours.
      */
-
     @Test
     @Order(9)
-    public void testSelect_String() {
-        System.out.println("Cours.Test.select_intitule");
-        System.out.println(Cours.select("Java"));
-    }
-
-    @Test
-    @Order(11)
     public void testDelete() {
         System.out.println("Cours.Test.delete");
-
-        Cours.delete(1); //supprime la première
-
+        int id = 7;
+        System.out.println(Cours.select().toString());
+        Cours.delete(id);
+        System.out.println("After Delete");
         System.out.println(Cours.select().toString());
     }
-
-
-
-
 
     /**
      * Test of select method, of class Cours.
@@ -219,14 +194,19 @@ public class CoursTest {
     @Order(10)
     public void testSelect_int() {
         System.out.println("Cours.Test.select_id");
-        int id = 2;
+        int id = 3;
         System.out.println(Cours.select(id).toString());
     }
 
     /**
      * Test of select method, of class Cours.
      */
-
+    @Test
+    @Order(11)
+    public void testSelect_String() {
+        System.out.println("Cours.Test.select_intitule");
+        System.out.println(Cours.select(cours.getIntitule()).toString());
+    }
 
     /**
      * Test of select method, of class Cours.
