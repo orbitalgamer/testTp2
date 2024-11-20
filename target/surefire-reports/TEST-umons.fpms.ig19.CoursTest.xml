@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="umons.fpms.ig19.Ig19Suite" time="1.469" tests="0" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="umons.fpms.ig19.CoursTest" time="0.356" tests="13" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -58,4 +58,105 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
+  <testcase name="testGetDuree" classname="umons.fpms.ig19.CoursTest" time="0.002">
+    <system-out><![CDATA[Cours.Before.setUp
+Cours.Test.getDuree
+Cours.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testAdd" classname="umons.fpms.ig19.CoursTest" time="0.159">
+    <system-out><![CDATA[Cours.Before.setUp
+Cours.Test.add
+Connection Established... 
+Connection Established... 
+Connection Established... 
+Connection Established... 
+Connection Established... 
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`test_java`.`cours`, CONSTRAINT `fk_cours_prof` FOREIGN KEY (`idprof`) REFERENCES `prof` (`idprof`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Connection Established... 
+Connection Established... 
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`test_java`.`cours`, CONSTRAINT `fk_cours_prof` FOREIGN KEY (`idprof`) REFERENCES `prof` (`idprof`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Connection Established... 
+[Cours{intitule=Intégration continue, duree=2h, prof=1}, Cours{intitule=Java, duree=2h, prof=2}, Cours{intitule=IA, duree=3h, prof=1}, Cours{intitule=C/C++, duree=3h, prof=2}, Cours{intitule=BDD, duree=3h, prof=1}]
+Cours.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testToString" classname="umons.fpms.ig19.CoursTest" time="0.0">
+    <system-out><![CDATA[Cours.Before.setUp
+Cours.Test.toString
+Cours.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testSelect_0args" classname="umons.fpms.ig19.CoursTest" time="0.019">
+    <system-out><![CDATA[Cours.Before.setUp
+Cours.Test.select
+Connection Established... 
+[Cours{intitule=Intégration continue, duree=2h, prof=1}, Cours{intitule=Java, duree=2h, prof=2}, Cours{intitule=IA, duree=3h, prof=1}, Cours{intitule=C/C++, duree=3h, prof=2}, Cours{intitule=BDD, duree=3h, prof=1}]
+Cours.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testGetProf" classname="umons.fpms.ig19.CoursTest" time="0.001">
+    <system-out><![CDATA[Cours.Before.setUp
+Cours.Test.getProf
+Cours.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testDelete" classname="umons.fpms.ig19.CoursTest" time="0.031">
+    <system-out><![CDATA[Cours.Before.setUp
+Cours.Test.delete
+Connection Established... 
+Connection Established... 
+[Cours{intitule=Java, duree=2h, prof=2}, Cours{intitule=IA, duree=3h, prof=1}, Cours{intitule=C/C++, duree=3h, prof=2}, Cours{intitule=BDD, duree=3h, prof=1}]
+Cours.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testSetProf" classname="umons.fpms.ig19.CoursTest" time="0.0">
+    <system-out><![CDATA[Cours.Before.setUp
+Cours.Test.setProf
+Cours.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdate" classname="umons.fpms.ig19.CoursTest" time="0.038">
+    <system-out><![CDATA[Cours.Before.setUp
+Cours.Test.update
+Connection Established... 
+Connection Established... 
+[Cours{intitule=Java, duree=42h, prof=2}, Cours{intitule=IA, duree=3h, prof=1}, Cours{intitule=C/C++, duree=3h, prof=2}, Cours{intitule=BDD, duree=3h, prof=1}]
+Cours.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testSelect_String" classname="umons.fpms.ig19.CoursTest" time="0.018">
+    <system-out><![CDATA[Cours.Before.setUp
+Cours.Test.select_intitule
+Connection Established... 
+Cours{intitule=Java, duree=42h, prof=2}
+Cours.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testSetIntitule" classname="umons.fpms.ig19.CoursTest" time="0.001">
+    <system-out><![CDATA[Cours.Before.setUp
+Cours.Test.setIntitule
+Cours.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testSelect_int" classname="umons.fpms.ig19.CoursTest" time="0.019">
+    <system-out><![CDATA[Cours.Before.setUp
+Cours.Test.select_id
+Connection Established... 
+Cours{intitule=Java, duree=42h, prof=1}
+Cours.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testGetIntitule" classname="umons.fpms.ig19.CoursTest" time="0.0">
+    <system-out><![CDATA[Cours.Before.setUp
+Cours.Test.getIntitule
+Cours.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testSetDuree" classname="umons.fpms.ig19.CoursTest" time="0.0">
+    <system-out><![CDATA[Cours.Before.setUp
+Cours.Test.setDuree
+Cours.After.tearDown
+]]></system-out>
+  </testcase>
 </testsuite>

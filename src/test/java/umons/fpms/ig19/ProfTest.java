@@ -205,43 +205,61 @@ public class ProfTest {
         System.out.println(Prof.select().toString());
     }
 
+
+
     /**
+     *
+     *
+     * Question 6 : testUpdate()
+     *
+     *
      * Test of update method, of class Prof.
+     *
+     *
      */
     @Test
     @Order(10)
     public void testUpdate() {
         System.out.println("Prof.Test.update");
-        int id = 3;
-        System.out.println("Before Updated the prof number " + String.valueOf(id));
-        System.out.println(Prof.select().toString());
-        Prof instance = new Prof("TJM_PROF9", "TJM_Prof9", "12/12/1985", "Mons");
-        instance.update(id);
-        System.out.println("After Updated the prof id = " + String.valueOf(id));
+        Prof instance = new Prof("up", "dated", "10/05/1984", "Mons");
+
+        instance.update(100);
+
         System.out.println(Prof.select().toString());
     }
 
-    /**
-     * Test of delete method, of class Prof.
-     */
-    @Test
-    @Order(11)
-    public void testDelete() {
-        System.out.println("Prof.Test.delete");
-        int id = 5;
-        System.out.println("Before Deleted the prof number " + String.valueOf(id));
-        Prof.delete(id);
-        System.out.println("After Deleted the prof number " + String.valueOf(id));
-    }
+
+
+
 
     /**
-     * Test of select method, of class Prof.
+     *
+     *
+     * Question 6 : testDelete()
+     *
+     *
+     Test of delete method, of class Prof.
+
+
      */
+
     @Test
     @Order(12)
+    public void testDelete() {
+        System.out.println("Prof.Test.delete");
+
+        Prof.delete(3);
+
+        System.out.println(Prof.select().toString());
+    }
+
+
+
+    @Test
+    @Order(11)
     public void testSelect_int() {
         System.out.println("Prof.Test.select_id");
-        int id = 1;
+        int id =2;
         System.out.println(Prof.select(id).toString());
     }
 
@@ -252,8 +270,8 @@ public class ProfTest {
     @Order(13)
     public void testSelect_String() {
         System.out.println("Prof.Test.select_name");
-        String n = "NOFFABEL";
-        System.out.println(Prof.select(n).toString());
+        String name = "TJM_PROF2";
+        System.out.println(Prof.select(name).toString());
     }
 
     /**

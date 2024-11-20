@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="umons.fpms.ig19.Ig19Suite" time="1.469" tests="0" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="umons.fpms.ig19.DataAccessTest" time="0.706" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -58,4 +58,64 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
+  <testcase name="testConnect" classname="umons.fpms.ig19.DataAccessTest" time="0.702">
+    <system-out><![CDATA[Suite.BeforeCLass.setUpClass
+DataAccess.BeforeClass.setUpClass
+DataAccess.Before.setUp
+Creating the Schema. 'test_java'.
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0
+
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0
+
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'
+
+-- -----------------------------------------------------
+-- Schema test_java
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `test_java` DEFAULT CHARACTER SET utf8 
+
+USE `test_java` 
+
+-- -----------------------------------------------------
+-- Table `test_java`.`prof`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `test_java`.`prof` (
+  `idprof` INT NOT NULL AUTO_INCREMENT,
+  `nomprof` VARCHAR(100) NOT NULL,
+  `prenomprof` VARCHAR(100) NOT NULL,
+  `datenaiss` VARCHAR(25) NULL,
+  `lieunaiss` VARCHAR(100) NULL,
+  PRIMARY KEY (`idprof`))
+ENGINE = InnoDB
+
+-- -----------------------------------------------------
+-- Table `test_java`.`cours`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `test_java`.`cours` (
+  `idcours` INT NOT NULL AUTO_INCREMENT,
+  `intitule` VARCHAR(200) NOT NULL,
+  `duree` VARCHAR(10) NOT NULL,
+  `idprof` INT NULL,
+  PRIMARY KEY (`idcours`),
+  INDEX `fk_cours_prof_idx` (`idprof` ASC),
+  CONSTRAINT `fk_cours_prof`
+    FOREIGN KEY (`idprof`)
+    REFERENCES `test_java`.`prof` (`idprof`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+
+SET SQL_MODE=@OLD_SQL_MODE
+
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS
+
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS
+
+Connection Established... 
+DataAccess.Test.connect
+Connection Established... 
+Connection test Valid
+DataAccess.After.tearDown
+]]></system-out>
+  </testcase>
 </testsuite>

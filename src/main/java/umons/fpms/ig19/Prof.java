@@ -115,7 +115,8 @@ public class Prof {
             System.out.println(ex);
         }
     }
-    
+
+
     public static ArrayList<Prof> select() {
         Connection conn = DataAccess.connect();
         Statement stm;
@@ -136,48 +137,54 @@ public class Prof {
         }
         return result;
     }
-    
+
+
     public static Prof select(int id) {
         Connection conn = DataAccess.connect();
         PreparedStatement prstm;
         String sql = "SELECT * FROM prof WHERE idprof = ?;";
         Prof result = null;
         try {
-            prstm = conn.prepareStatement(sql);
-            prstm.setInt(1, id);
+            prstm = conn.prepareStatement( sql );
+            prstm.setInt( 1, id );
             try (ResultSet rs = prstm.executeQuery()) {
-                if(rs.next()){
-                    result = new Prof(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                if (rs.next()) {
+                    result = new Prof( rs.getString( 2 ), rs.getString( 3 ), rs.getString( 4 ), rs.getString( 5 ) );
                 }
                 prstm.close();
             }
             conn.close();
         } catch (SQLException ex) {
-            System.out.println(ex);
+            System.out.println( ex );
         }
         return result;
     }
-    
+
+
+
     public static ArrayList<Prof> select(String name) {
         Connection conn = DataAccess.connect();
         PreparedStatement prstm;
-        ArrayList<Prof> result = new ArrayList<Prof>();
+        String sql = "SELECT * FROM prof WHERE nomprof=?;";
+        ArrayList<Prof> result = new ArrayList<>();
         try {
-            prstm = conn.prepareStatement("SELECT * FROM prof WHERE nomprof = ?;");
-            prstm.setString(1, name);
+            prstm = conn.prepareStatement( sql );
+            prstm.setString( 1, name ); //mets param nom
             try (ResultSet rs = prstm.executeQuery()) {
-                while(rs.next()){
-                    Prof prof = new Prof(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
-                    result.add(prof);
+                if (rs.next()) {
+                    result.add(new Prof( rs.getString( 2 ), rs.getString( 3 ), rs.getString( 4 ), rs.getString( 5 ) ));
                 }
                 prstm.close();
             }
             conn.close();
         } catch (SQLException ex) {
-            System.out.println(ex);
+            System.out.println( ex );
         }
         return result;
     }
+
+
+
     
     public ArrayList<Cours> getListCours() {
         Connection conn = DataAccess.connect();

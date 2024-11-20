@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="umons.fpms.ig19.Ig19Suite" time="1.469" tests="0" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="umons.fpms.ig19.ProfTest" time="0.305" tests="16" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -58,4 +58,125 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
+  <testcase name="testSetDateNaiss" classname="umons.fpms.ig19.ProfTest" time="0.002">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.setDateNaiss
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testSetFirstname" classname="umons.fpms.ig19.ProfTest" time="0.0">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.setFirstname
+Prof{name=null, firstname=Dadday, dateNaiss=null, lieuNaiss=null}
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testAdd" classname="umons.fpms.ig19.ProfTest" time="0.136">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.add
+Connection Established... 
+Connection Established... 
+Connection Established... 
+Connection Established... 
+Connection Established... 
+Connection Established... 
+[Prof{name=NOFFABEL, firstname=Dadday, dateNaiss=12/07/1989, lieuNaiss=Yamoussoukro}, Prof{name=TJM_PROF1, firstname=TJM_Prof1, dateNaiss=10/05/1984, lieuNaiss=Louvain}, Prof{name=TJM_PROF0, firstname=TJM_Prof0, dateNaiss=, lieuNaiss=}, Prof{name=TJM_PROF2, firstname=TJM_Prof2, dateNaiss=10/10/1984, lieuNaiss=Charleroi}, Prof{name=TJM_PROF3, firstname=TJM_Prof3, dateNaiss=10/10/1987, lieuNaiss=Paris}]
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testToString" classname="umons.fpms.ig19.ProfTest" time="0.001">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.toString
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testSelect_0args" classname="umons.fpms.ig19.ProfTest" time="0.02">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.select
+Liste des profs...
+Connection Established... 
+[Prof{name=NOFFABEL, firstname=Dadday, dateNaiss=12/07/1989, lieuNaiss=Yamoussoukro}, Prof{name=TJM_PROF1, firstname=TJM_Prof1, dateNaiss=10/05/1984, lieuNaiss=Louvain}, Prof{name=TJM_PROF0, firstname=TJM_Prof0, dateNaiss=, lieuNaiss=}, Prof{name=TJM_PROF2, firstname=TJM_Prof2, dateNaiss=10/10/1984, lieuNaiss=Charleroi}, Prof{name=TJM_PROF3, firstname=TJM_Prof3, dateNaiss=10/10/1987, lieuNaiss=Paris}]
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testGetName" classname="umons.fpms.ig19.ProfTest" time="0.001">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.getName
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testGetListCours" classname="umons.fpms.ig19.ProfTest" time="0.024">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.getListCours
+Liste des cours du Prof: NOFFABEL Dadday
+Connection Established... 
+[]
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testGetLieuNaiss" classname="umons.fpms.ig19.ProfTest" time="0.001">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.getLieuNaiss
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testGetDateNaiss" classname="umons.fpms.ig19.ProfTest" time="0.001">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.getDateNaiss
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testGetFirstname" classname="umons.fpms.ig19.ProfTest" time="0.001">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.getFirstname
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testDelete" classname="umons.fpms.ig19.ProfTest" time="0.032">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.delete
+Connection Established... 
+Connection Established... 
+[Prof{name=NOFFABEL, firstname=Dadday, dateNaiss=12/07/1989, lieuNaiss=Yamoussoukro}, Prof{name=TJM_PROF1, firstname=TJM_Prof1, dateNaiss=10/05/1984, lieuNaiss=Louvain}, Prof{name=TJM_PROF2, firstname=TJM_Prof2, dateNaiss=10/10/1984, lieuNaiss=Charleroi}, Prof{name=TJM_PROF3, firstname=TJM_Prof3, dateNaiss=10/10/1987, lieuNaiss=Paris}]
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testSetName" classname="umons.fpms.ig19.ProfTest" time="0.001">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.setname
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdate" classname="umons.fpms.ig19.ProfTest" time="0.035">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.update
+Connection Established... 
+Update DONE !!!
+Connection Established... 
+[Prof{name=NOFFABEL, firstname=Dadday, dateNaiss=12/07/1989, lieuNaiss=Yamoussoukro}, Prof{name=TJM_PROF1, firstname=TJM_Prof1, dateNaiss=10/05/1984, lieuNaiss=Louvain}, Prof{name=TJM_PROF2, firstname=TJM_Prof2, dateNaiss=10/10/1984, lieuNaiss=Charleroi}, Prof{name=TJM_PROF3, firstname=TJM_Prof3, dateNaiss=10/10/1987, lieuNaiss=Paris}]
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testSetLieuNaiss" classname="umons.fpms.ig19.ProfTest" time="0.001">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.setLieuNaiss
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testSelect_String" classname="umons.fpms.ig19.ProfTest" time="0.018">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.select_name
+Connection Established... 
+[Prof{name=TJM_PROF2, firstname=TJM_Prof2, dateNaiss=10/10/1984, lieuNaiss=Charleroi}]
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
+  <testcase name="testSelect_int" classname="umons.fpms.ig19.ProfTest" time="0.019">
+    <system-out><![CDATA[Prof.Before.setUp
+Prof.Test.select_id
+Connection Established... 
+Prof{name=TJM_PROF1, firstname=TJM_Prof1, dateNaiss=10/05/1984, lieuNaiss=Louvain}
+Prof.After.tearDown
+]]></system-out>
+  </testcase>
 </testsuite>
